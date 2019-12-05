@@ -13,12 +13,12 @@ public class Booking {
     @Column(name = "date")
     private String date;
 
-    @Column(name = "booking")
-    private Booking booking;
+    @Column(name = "course")
+    private Course course;
 
-    public Booking(String date, Booking booking) {
+    public Booking(String date, Course course) {
         this.date = date;
-        this.booking = booking;
+        this.course = course;
     }
 
     public Booking(){
@@ -41,11 +41,11 @@ public class Booking {
         this.date = date;
     }
 
-    public Booking getBooking() {
-        return booking;
+    public Course getCourse() {
+        return course;
     }
 
-    public void setBooking(Booking booking) {
-        this.booking = booking;
+    public void setCourse(Course course) {
+        this.course = course;
     }
 }
