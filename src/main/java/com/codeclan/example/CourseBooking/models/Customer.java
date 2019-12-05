@@ -28,7 +28,6 @@ public class Customer {
     private List<Booking> bookings;
 
 
-
     public Customer(String name, String town, int age) {
         this.name = name;
         this.town = town;

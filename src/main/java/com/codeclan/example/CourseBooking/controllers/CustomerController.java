@@ -27,7 +27,18 @@ public class CustomerController {
 
     @GetMapping(value = "/course/{course_name}")
     public List<Customer> getAllCustomersByBookingsCourseName(@PathVariable String course_name){
-        return customerRepository.getAllCustomersByBookingsCourseName(course_name);
+        return customerRepository.getAllCustomersByBookingsCourseNameIgnoreCase(course_name);
     }
+
+    @GetMapping(value = "/town/{town_name}/course/{course_name}")
+    public List<Customer> getAllCustomersByTownAndBookingsCourseNameIgnoreCase(@PathVariable String town_name, @PathVariable String course_name){
+        return customerRepository.getAllCustomersByTownAndBookingsCourseNameIgnoreCase(town_name, course_name);
+    }
+
+    @GetMapping(value = "/age/{age}/town/{town_name}/course/{course_name}")
+    public List<Customer> getAllCustomersByAgeGreaterThanAndTownAndBookingsCourseNameIgnoreCase(@PathVariable int age, @PathVariable String town_name, @PathVariable String course_name){
+        return customerRepository.getAllCustomersByAgeGreaterThanAndTownAndBookingsCourseNameIgnoreCase(age, town_name, course_name);
+    }
+
 
 }
