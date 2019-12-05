@@ -1,6 +1,7 @@
 package com.codeclan.example.CourseBooking;
 
 import com.codeclan.example.CourseBooking.models.Course;
+import com.codeclan.example.CourseBooking.models.Customer;
 import com.codeclan.example.CourseBooking.repositories.Bookingrepositories.BookingRepository;
 import com.codeclan.example.CourseBooking.repositories.Courserepositories.CourseRepository;
 import com.codeclan.example.CourseBooking.repositories.customerrepositories.CustomerRepository;
@@ -34,5 +35,13 @@ class CourseBookingApplicationTests {
 		assertEquals(1, foundCourse.size());
 		assertEquals("Intro to Python", foundCourse.get(0).getName());
 	}
+
+	@Test
+	public void canGetAllCustomersByCourseName(){
+		List<Customer> foundCustomer = customerRepository.getAllCustomersByBookingsCourseName("Intro to Python");
+		assertEquals(1, foundCustomer.size());
+		assertEquals("Bob", foundCustomer.get(0).getName());
+	}
+
 
 }
