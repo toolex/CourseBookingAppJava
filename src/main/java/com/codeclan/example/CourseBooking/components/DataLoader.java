@@ -20,7 +20,7 @@ public class DataLoader implements ApplicationRunner {
     BookingRepository bookingRepository;
 
     @Autowired
-    CustomerRepository customerRepository;
+    CourseRepository courseRepository;
 
     public DataLoader(){
 
@@ -33,13 +33,13 @@ public class DataLoader implements ApplicationRunner {
 
         Course course1 = new Course("Intro to Python", "Edinburgh", 5);
         Course course2 = new Course("JS Basics", "Glasgow", 4);
-        CourseRepository.save(course1);
-        CourseRepository.save(course2);
+        courseRepository.save(course1);
+        courseRepository.save(course2);
 
         Booking booking1 = new Booking("05-02-2020", course1);
         Booking booking2 = new Booking("20-01-2020", course2);
-        bookingRepository.save(course1);
-        bookingRepository.save(course2);
 
+        bookingRepository.save(booking1);
+        bookingRepository.save(booking2);
     }
 }
