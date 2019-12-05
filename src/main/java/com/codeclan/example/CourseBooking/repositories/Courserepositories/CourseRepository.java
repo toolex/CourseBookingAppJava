@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface CourseRepository extends JpaRepository<Course, Long>, CourseRepositoryCustom {
     List<Course> getAllCoursesByStarRating(int starRating);
+    List<Course> getAllCoursesByBookingsCustomerName(String name);
 }

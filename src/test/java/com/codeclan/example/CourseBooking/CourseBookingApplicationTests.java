@@ -1,5 +1,6 @@
 package com.codeclan.example.CourseBooking;
 
+import com.codeclan.example.CourseBooking.models.Booking;
 import com.codeclan.example.CourseBooking.models.Course;
 import com.codeclan.example.CourseBooking.models.Customer;
 import com.codeclan.example.CourseBooking.repositories.Bookingrepositories.BookingRepository;
@@ -42,6 +43,22 @@ class CourseBookingApplicationTests {
 		assertEquals(1, foundCustomer.size());
 		assertEquals("Bob", foundCustomer.get(0).getName());
 	}
+
+	@Test
+	public void canGetAllCoursesByBookingCustomerName(){
+		List<Course> foundCourse = courseRepository.getAllCoursesByBookingsCustomerName("Jim");
+		assertEquals(1, foundCourse.size());
+		assertEquals("JS Basics", foundCourse.get(0).getName());
+	}
+
+	@Test
+	public void canGetAllBookingsByDate(){
+		List<Booking> foundBooking = bookingRepository.getAllBookingsByDate("20-01-2020");
+		assertEquals(2, foundBooking.size());
+	}
+
+
+
 
 
 }
