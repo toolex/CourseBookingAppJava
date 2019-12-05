@@ -5,5 +5,5 @@ import com.codeclan.example.CourseBooking.models.Booking;
 import java.util.List;
 
 public interface BookingRepositoryCustom {
-    List<Booking> getAllBookingsForDate(String date);
+//    List<Booking> getAllBookingsForDate(String date);
 }

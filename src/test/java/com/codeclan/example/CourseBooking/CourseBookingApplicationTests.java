@@ -30,7 +30,7 @@ class CourseBookingApplicationTests {
 
 	@Test
 	public void canGetAllCoursesWithGivenRating(){
-		List<Course> foundCourse = courseRepository.getAllCoursesForStarRating(5);
+		List<Course> foundCourse = courseRepository.getAllCoursesByStarRating(5);
 		assertEquals(1, foundCourse.size());
 		assertEquals("Intro to Python", foundCourse.get(0).getName());
 	}
