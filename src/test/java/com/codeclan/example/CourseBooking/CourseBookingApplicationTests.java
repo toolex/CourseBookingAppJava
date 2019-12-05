@@ -41,12 +41,12 @@ class CourseBookingApplicationTests {
 	public void canGetAllCustomersByCourseName(){
 		List<Customer> foundCustomer = customerRepository.getAllCustomersByBookingsCourseName("Intro to Python");
 		assertEquals(1, foundCustomer.size());
-		assertEquals("Bob", foundCustomer.get(0).getName());
+		assertEquals("bob", foundCustomer.get(0).getName());
 	}
 
 	@Test
 	public void canGetAllCoursesByBookingCustomerName(){
-		List<Course> foundCourse = courseRepository.getAllCoursesByBookingsCustomerName("Jim");
+		List<Course> foundCourse = courseRepository.getAllCoursesByBookingsCustomerNameIgnoreCase("jim");
 		assertEquals(1, foundCourse.size());
 		assertEquals("JS Basics", foundCourse.get(0).getName());
 	}

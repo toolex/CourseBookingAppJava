@@ -26,8 +26,8 @@ public class CustomerController {
     CourseRepository courseRepository;
 
     @GetMapping(value = "/course/{course_name}")
-    public List<Customer> getAllCustomersByBookingsCourseName(@PathVariable String name){
-        return customerRepository.getAllCustomersByBookingsCourseName(name);
+    public List<Customer> getAllCustomersByBookingsCourseName(@PathVariable String course_name){
+        return customerRepository.getAllCustomersByBookingsCourseName(course_name);
     }
 
 }

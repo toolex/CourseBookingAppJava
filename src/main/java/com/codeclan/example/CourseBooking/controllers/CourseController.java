@@ -28,8 +28,8 @@ public class CourseController {
     }
 
     @GetMapping(value = "/customer/{customer_name}")
-    public List<Course> getAllCoursesByBookingsCustomerName(@PathVariable String name) {
-        return courseRepository.getAllCoursesByBookingsCustomerName(name);
+    public List<Course> getAllCoursesByBookingsCustomerName(@PathVariable String customer_name) {
+        return courseRepository.getAllCoursesByBookingsCustomerNameIgnoreCase(customer_name);
     }
 
 }
